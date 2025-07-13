@@ -1,16 +1,21 @@
 import os
-rd=os.popen('pip list').read()
-mdl1='tkcalendar' in rd
-mdl2='mysql-connector-python' in rd
-mdl3='pyinstaller' in rd
-chk=0
+
+rd = os.popen('pip list').read()
+mdl1 = 'tkcalendar' in rd
+mdl2 = 'mysql-connector-python' in rd
+mdl3 = 'pyinstaller' in rd
+
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+ICON_PATH = os.path.join(BASE_DIR, 'widget_images', 'books.ico')
+
+chk = 0
 if mdl1 and mdl2 and mdl3:
     try:
-        print("Ensure that you  changed the correct password in the source File(library)")
-        print("The  program is ready to install")
-        a=input("press(y/n):")
-        if a.lower()=='y':
-            os.system('cmd /k "pyinstaller --noconsole --hidden-import "babel.numbers" --hidden-import "tzdata"  --icon=books.ico library.py " ')
+        print("Ensure that you changed the correct password in the source File (library.py)")
+        print("The program is ready to install")
+        a = input("press(y/n): ")
+        if a.lower() == 'y':
+            os.system(f'cmd /k "pyinstaller --noconsole --hidden-import babel.numbers --hidden-import tzdata --icon={ICON_PATH} library.py"')
         else:
             print("aborted")
     except Exception:
@@ -18,17 +23,17 @@ if mdl1 and mdl2 and mdl3:
         pass
 else:
     try:
-        print("packages missing\nDownload the packages via following command,using cmd:\n")
-        lst=['tkcalendar','mysql-connector-python','pyinstaller']
-        if mdl1==False and mdl2==False and mdl3==False:
+        print("Packages missing\nDownload the packages via following command, using cmd:\n")
+        lst = ['tkcalendar', 'mysql-connector-python', 'pyinstaller']
+        if not mdl1 and not mdl2 and not mdl3:
             for pkg in lst:
-                print("pip install {}".format(pkg))
+                print(f"pip install {pkg}")
         else:
-            if mdl1==False:
-                print("pip install",lst[0])
-            if mdl2==False:
-                print("pip install",lst[1])
-            if mdl3==False:
-                print("pip install",lst[2])
+            if not mdl1:
+                print("pip install", lst[0])
+            if not mdl2:
+                print("pip install", lst[1])
+            if not mdl3:
+                print("pip install", lst[2])
     except Exception:
-        pass        
+        pass

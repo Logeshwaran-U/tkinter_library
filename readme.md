@@ -30,13 +30,17 @@ This is a GUI-based **Library Management System** built using **Python Tkinter**
 
 ## 🧑‍🏭 What You Need To Do Before Running
 
-### 1. 🔧 Install Required Python Libraries
+### 1. ▶️ Run Setup Script
+
+Just run the setup file to automatically install all dependencies and configure the environment:
 
 ```bash
-pip install tkcalendar
-pip install mysql-connector-python
-pip install pyinstaller
+python setup.py
 ```
+
+✅ This will:
+- Install required Python packages (`tkcalendar`, `mysql-connector-python`, etc.)
+- Prepare for `.exe` build if needed
 
 ---
 
@@ -70,13 +74,13 @@ python library.py
 
 ### 5. 🛠️ To Create `.exe` (Optional)
 
-Run:
+Once setup is complete, you can also generate a `.exe` version:
 
 ```bash
 python setup.py
 ```
 
-This will generate an executable in the `dist/` folder.
+The executable will be saved inside the `dist/` folder.
 
 ---
 

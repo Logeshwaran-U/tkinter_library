@@ -19,7 +19,7 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 IMAGE_DIR = os.path.join(BASE_DIR, "widget_images")
 
 global mysql_password
-mysql_password='logumysql2005'
+mysql_password='your-password-here'
 
 class parent_window:
     def __init__(self,master):

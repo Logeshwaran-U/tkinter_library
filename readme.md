@@ -1,5 +1,3 @@
-
-````markdown
 # 📚 Library Management System (Tkinter + MySQL)
 
 This is a GUI-based **Library Management System** built using **Python Tkinter** for the frontend and **MySQL** for data storage. It is designed to help manage books and members in a library efficiently with a user-friendly interface.
@@ -95,5 +93,3 @@ This will generate an executable in the `dist/` folder.
 
 **Logeshwaran U**  
 If you like this project, give it a ⭐ on GitHub!
-
-````

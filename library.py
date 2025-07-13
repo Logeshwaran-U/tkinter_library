@@ -6,6 +6,8 @@ from tkcalendar import *
 from tkcalendar import DateEntry ,Calendar
 from datetime import date,datetime
 import mysql.connector
+import os
+
 master=Tk()
 #Notes{
 # some libraries are not pre installed,so install the required libraries using pip command or from the site.
@@ -13,6 +15,9 @@ master=Tk()
 # pip install mysql-connector-python
 # pip install pyinstaller
 # }*
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+IMAGE_DIR = os.path.join(BASE_DIR, "widget_images")
+
 global mysql_password
 mysql_password='logumysql2005'
 
@@ -22,7 +27,7 @@ class parent_window:
         master.config(menu=self.tk_parent)
         #master.attributes("-fullscreen", True)
         master.state('zoomed')
-        self.win_p1=PhotoImage(file="C:/Users/loges/OneDrive/Desktop/scratch/widget_images/b3.png")
+        self.win_p1 = PhotoImage(file=os.path.join(IMAGE_DIR, "b3.png"))
         self.win_img_l1=Label(master,image=self.win_p1)
         self.win_img_l1.place(x=0,y=0,relwidth=1,relheight=1)        
         #creating masterentry in menu
